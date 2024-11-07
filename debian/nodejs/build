@@ -1,0 +1,2 @@
+esbuild ./sources/_lib.ts --bundle --platform=node --target=node16.20.0 --external:corepack --outfile='./dist/lib/corepack.cjs' --resolve-extensions='.ts,.mjs,.js'
+ts-node ./mkshims.ts

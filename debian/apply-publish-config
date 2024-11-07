@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+
+const fs = require("fs-extra");
+
+async function main() {
+	let packageObj = await fs.readJson(process.argv.slice(2)[0]);
+	let publishConfigObj = packageObj.publishConfig;
+
+	if (publishConfigObj) {
+		let configNames = Object.getOwnPropertyNames(publishConfigObj);
+
+		configNames.forEach((configName) => {
+			packageObj[configName] = publishConfigObj[configName];
+		});
+
+		await fs.writeJson(process.argv.slice(2)[0], packageObj, { spaces: 2 });
+	}
+
+	return;
+}
+
+main();

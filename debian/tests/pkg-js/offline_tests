@@ -1,0 +1,4 @@
+tests/Disable.test.ts
+tests/Enable.test.ts
+tests/httpUtils.test.ts
+tests/npmRegistryUtils.test.ts
