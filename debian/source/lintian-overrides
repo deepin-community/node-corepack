@@ -1,0 +1,5 @@
+# False positive
+embedded-javascript-library please use libjs-async *
+
+# Test data
+very-long-line-length-in-source-file * > 512 [tests/nock/*.dat:*]

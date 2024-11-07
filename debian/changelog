@@ -1,5 +1,38 @@
-template-repository (1.0-1) unstable; urgency=medium
+node-corepack (0.24.0-2) unstable; urgency=medium
 
-  * Initial release
+  * Team upload
+  * Don't launch online-tests with i386 arch: works but different snapshots
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Yadd <yadd@debian.org>  Sun, 14 Jan 2024 07:58:53 +0400
+
+node-corepack (0.24.0-1) unstable; urgency=medium
+
+  * Team upload
+  * Components:
+    + Replace embedded @yarnpkg/* files by dependencies to node-yarnpkg-*
+    + Drop components arcanis-libzip and zilb
+  * Use uscan group
+  * Drop patches
+  * New upstream version 0.24.0
+  * Add patch to fix tsc config
+  * Fix tests:
+    + Split tests to launch network tests in a separate autopkgtest entry
+    + Launch only non-network tests during build
+
+ -- Yadd <yadd@debian.org>  Sat, 13 Jan 2024 12:25:07 +0400
+
+node-corepack (0.19.0+dfsg+~cs4.2.0-2) unstable; urgency=medium
+
+  [ Yadd ]
+  * Fix debian/watch
+
+  [ Israel Galadima ]
+  * Ignore zlib and arcanis-libzip
+
+ -- Israel Galadima <izzygaladima@gmail.com>  Wed, 13 Dec 2023 16:50:20 +0100
+
+node-corepack (0.19.0+dfsg+~cs4.2.0-1) experimental; urgency=medium
+
+  * Initial release (Closes: #1041551)
+
+ -- Israel Galadima <izzygaladima@gmail.com>  Fri, 18 Aug 2023 08:50:10 +0400

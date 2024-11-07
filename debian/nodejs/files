@@ -1,0 +1,15 @@
+dist/
+shims/corepack
+shims/npm
+shims/npx
+shims/pnpm
+shims/pnpx
+shims/yarn
+shims/yarnpkg
+shims/nodewin/corepack
+shims/nodewin/npm
+shims/nodewin/npx
+shims/nodewin/pnpm
+shims/nodewin/pnpx
+shims/nodewin/yarn
+shims/nodewin/yarnpkg

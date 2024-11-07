@@ -1,0 +1,16 @@
+Description: fix tsc config
+Author: Yadd <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2024-01-13
+
+--- a/tsconfig.json
++++ b/tsconfig.json
+@@ -7,7 +7,7 @@
+     "moduleResolution": "node",
+     "noEmit": true,
+     "forceConsistentCasingInFileNames": true,
+-    "lib": ["ES2023"],
++    "lib": ["esnext"],
+     "module": "commonjs",
+     "resolveJsonModule": true,
+     "skipLibCheck": true,
