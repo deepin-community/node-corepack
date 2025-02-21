@@ -1,0 +1,16 @@
+#!/bin/sh
+
+OFFLINE_TESTS=`cat debian/tests/pkg-js/offline_tests`
+
+if test "$NETWORK_TESTS" = 'yes' ; then
+  TESTS=`ls tests/*.test.ts|grep -v -f debian/tests/pkg-js/offline_tests`
+else
+  TESTS=$OFFLINE_TESTS
+fi
+
+if [ "$AUTOPKGTEST_TMP" != "" ]
+then
+  jest --testNamePattern='^(?!.*should expose its root to spawned processes).*$' $TESTS
+else 
+  jest $TESTS
+fi

@@ -1,0 +1,15 @@
+clipanion
+debug
+nock
+proxy-agent
+semver
+tar
+@types/debug
+@types/semver
+@types/tar
+@types/which
+v8-compile-cache
+which
+@yarnpkg/fslib
+@yarnpkg/libzip
+@zkochan/cmd-shim
