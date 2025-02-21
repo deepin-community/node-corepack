@@ -1,0 +1,5 @@
+Test-Command: NETWORK_TESTS=yes /usr/share/pkg-js-autopkgtest/runner
+Depends: @, @builddeps@, pkg-js-autopkgtest
+Restrictions: allow-stderr, skippable, needs-internet
+Features: test-name=pkg-js-autopkgtest-online
+Architecture: amd64, arm64, armel, armhf, ppc64el, s390x
