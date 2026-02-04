@@ -1,4 +1,30 @@
 #!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
 
 %:
 	dh $@
+
+#override_dh_auto_build:
+
+NODEINSTALLROOTDIR = debian/node-corepack/usr/share/nodejs
+
+execute_before_dh_installman:
+	chmod +x dist/corepack.js && help2man -N -i debian/manpage.h2m -n 'Access npm, Yarn and pnpm without having to install them' dist/corepack.js > debian/corepack.1
+	perl -i -pe 's/corepack\.js/corepack/; s/COREPACK\.JS/COREPACK/' debian/corepack.1
+
+override_dh_fixperms:
+	dh_fixperms
+	chmod +x $(NODEINSTALLROOTDIR)/corepack/dist/corepack.js \
+	$(NODEINSTALLROOTDIR)/corepack/dist/npm.js \
+	$(NODEINSTALLROOTDIR)/corepack/dist/npx.js \
+	$(NODEINSTALLROOTDIR)/corepack/dist/pnpm.js \
+	$(NODEINSTALLROOTDIR)/corepack/dist/pnpx.js \
+	$(NODEINSTALLROOTDIR)/corepack/dist/yarn.js \
+	$(NODEINSTALLROOTDIR)/corepack/dist/yarnpkg.js
+
+override_dh_installdocs:
+	dh_installdocs
+	dh_nodejs_autodocs
