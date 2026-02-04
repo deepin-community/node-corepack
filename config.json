@@ -1,0 +1,160 @@
+{
+  "definitions": {
+    "npm": {
+      "default": "10.2.5+sha1.ef86b9aafd9965e60814ed11a3d4fb00a4e3b006",
+      "fetchLatestFrom": {
+        "type": "npm",
+        "package": "npm"
+      },
+      "transparent": {
+        "commands": [
+          [
+            "npm",
+            "init"
+          ],
+          [
+            "npx"
+          ]
+        ]
+      },
+      "ranges": {
+        "*": {
+          "url": "https://registry.npmjs.org/npm/-/npm-{}.tgz",
+          "bin": {
+            "npm": "./bin/npm-cli.js",
+            "npx": "./bin/npx-cli.js"
+          },
+          "registry": {
+            "type": "npm",
+            "package": "npm"
+          },
+          "commands": {
+            "use": [
+              "npm",
+              "install"
+            ]
+          }
+        }
+      }
+    },
+    "pnpm": {
+      "default": "8.13.1+sha1.90f9b2bb3ed58632bcb7b13c3902d6873ee9501c",
+      "fetchLatestFrom": {
+        "type": "npm",
+        "package": "pnpm"
+      },
+      "transparent": {
+        "commands": [
+          [
+            "pnpm",
+            "init"
+          ],
+          [
+            "pnpx"
+          ],
+          [
+            "pnpm",
+            "dlx"
+          ]
+        ]
+      },
+      "ranges": {
+        "<6.0.0": {
+          "url": "https://registry.npmjs.org/pnpm/-/pnpm-{}.tgz",
+          "bin": {
+            "pnpm": "./bin/pnpm.js",
+            "pnpx": "./bin/pnpx.js"
+          },
+          "registry": {
+            "type": "npm",
+            "package": "pnpm"
+          },
+          "commands": {
+            "use": [
+              "pnpm",
+              "install"
+            ]
+          }
+        },
+        ">=6.0.0": {
+          "url": "https://registry.npmjs.org/pnpm/-/pnpm-{}.tgz",
+          "bin": {
+            "pnpm": "./bin/pnpm.cjs",
+            "pnpx": "./bin/pnpx.cjs"
+          },
+          "registry": {
+            "type": "npm",
+            "package": "pnpm"
+          },
+          "commands": {
+            "use": [
+              "pnpm",
+              "install"
+            ]
+          }
+        }
+      }
+    },
+    "yarn": {
+      "default": "1.22.21+sha1.1959a18351b811cdeedbd484a8f86c3cc3bbaf72",
+      "fetchLatestFrom": {
+        "type": "npm",
+        "package": "yarn"
+      },
+      "transparent": {
+        "default": "4.0.2+sha224.4b7a50dfc3384e203b885efe2c3ff5e04e3a9c682c0a2f0df25c5e34",
+        "commands": [
+          [
+            "yarn",
+            "dlx"
+          ]
+        ]
+      },
+      "ranges": {
+        "<2.0.0": {
+          "url": "https://registry.yarnpkg.com/yarn/-/yarn-{}.tgz",
+          "bin": {
+            "yarn": "./bin/yarn.js",
+            "yarnpkg": "./bin/yarn.js"
+          },
+          "registry": {
+            "type": "npm",
+            "package": "yarn"
+          },
+          "commands": {
+            "use": [
+              "yarn",
+              "install"
+            ]
+          }
+        },
+        ">=2.0.0": {
+          "name": "yarn",
+          "url": "https://repo.yarnpkg.com/{}/packages/yarnpkg-cli/bin/yarn.js",
+          "bin": [
+            "yarn",
+            "yarnpkg"
+          ],
+          "registry": {
+            "type": "url",
+            "url": "https://repo.yarnpkg.com/tags",
+            "fields": {
+              "tags": "aliases",
+              "versions": "tags"
+            }
+          },
+          "npmRegistry": {
+            "type": "npm",
+            "package": "@yarnpkg/cli-dist"
+          },
+          "commands": {
+            "use": [
+              "yarn",
+              "install"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

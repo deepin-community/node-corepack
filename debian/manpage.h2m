@@ -1,0 +1,5 @@
+/\bGeneral commands\b/
+.IP
+corepack <binary name>[@<version>] [... args]
+.IP
+Runs the specified package manager in the local folder
